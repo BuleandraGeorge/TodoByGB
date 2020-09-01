@@ -1,1 +1,1 @@
-web:gunicorn ToDoByGB.wisgi.application
+web:gunicorn ToDoByGB.wsgi:application
