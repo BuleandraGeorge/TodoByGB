@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+   <h1 style="text-align:center">Thinks For Today:</h1>
+   {% for item in items %}
+
+        <div style="text-align:center; font-size:1rem; margin:1rem">
+            {% if item.done  %}
+                <span><strike>{{ item.name }}</strike></span>
+                {% else %}
+                <span>{{ item.name }}</span>
+            {% endif %}
+            <span>
+                <a href="/toggle/{{ item.id }}">
+                    <button>Toggle</button>
+                </a>
+            </span>
+            <span>
+                <a href="/edit/{{ item.id }}">
+                    <button>Edit</button>
+                </a>
+            </span>
+            <span>
+                <a href="/delete/{{ item.id }}">
+                    <button>Delete</button>
+                </a>
+            </span>
+        </div>
+        {% empty %}
+            <h2 style="text-align:center;">Nothing to do for today</h2>
+    {% endfor %}
+   <a href="add">Add a new Task baby</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+   <h1 style="text-align:center">Add a new task:</h1>
+    <form method="POST" action="/add/" >
+        {% csrf_token %}
+        {{ form }}
+        <div>
+            <p><button type="submit">Add task</button></p>
+        </div>
+    </form>
+</body>
+</html>
